@@ -2066,7 +2066,7 @@ var _default2 = {
     target: {
       type: Function,
       default: function _default() {
-        return window.document;
+        return window.document.body;
       }
     },
     bottom: {
@@ -9291,7 +9291,7 @@ var _default2 = {
     },
     border: {
       type: Boolean,
-      default: false
+      default: true
     },
     height: Number,
     checkbox: {
@@ -10077,7 +10077,10 @@ var _default2 = {
     label: String,
     prop: String,
     dict: String,
-    align: String,
+    align: {
+      type: String,
+      default: 'center'
+    },
     format: Function,
     render: Function,
     unit: String,
