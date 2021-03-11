@@ -9955,6 +9955,10 @@ var _config = _interopRequireDefault(__webpack_require__(4));
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   name: 'hTableTd',
   props: {
@@ -21275,7 +21279,14 @@ var render = function() {
               )
             : _vm._e(),
           _vm._v(" "),
-          _vm.prop || _vm.render ? [_vm._v(_vm._s(_vm.show))] : _vm._e(),
+          _vm.prop || _vm.render
+            ? [
+                _vm.format
+                  ? _c("span", { domProps: { innerHTML: _vm._s(_vm.show) } })
+                  : [_vm._v(_vm._s(_vm.show))]
+              ]
+            : _vm._e(),
+          _vm._v(" "),
           _vm._t("default", null, { data: _vm.data, index: _vm.index })
         ],
         2
