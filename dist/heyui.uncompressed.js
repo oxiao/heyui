@@ -10015,7 +10015,7 @@ var _default = {
       }
 
       if (this.format) {
-        return this.format(value);
+        return this.format(this.data, this.prop, value, this.index);
       }
 
       return value;
