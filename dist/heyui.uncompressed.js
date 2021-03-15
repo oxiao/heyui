@@ -11391,6 +11391,7 @@ var _tree = _interopRequireDefault(__webpack_require__(241));
 //
 //
 //
+//
 var prefix = 'h-treepicker';
 var _default = {
   name: 'hTreePicker',
@@ -11597,6 +11598,7 @@ var _default = {
       return null;
     },
     clear: function clear() {
+      this.object = null;
       this.stashObject = null;
       this.objects = [];
       this.$refs.tree.searchTree(null);
@@ -18695,7 +18697,17 @@ var render = function() {
                 )
               ]),
           _vm._v(" "),
-          _c("i", { staticClass: "h-icon-down" })
+          _vm.object || _vm.objects.length
+            ? _c("i", { staticClass: "h-icon-down" })
+            : _c("i", {
+                staticClass: "h-icon-close text-hover",
+                on: {
+                  click: function($event) {
+                    $event.stopPropagation()
+                    return _vm.clear($event)
+                  }
+                }
+              })
         ],
         2
       ),
