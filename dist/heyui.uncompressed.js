@@ -18642,7 +18642,7 @@ var render = function() {
     [
       _c(
         "div",
-        { staticClass: "h-treepicker-show", class: _vm.showCls },
+        { staticClass: "h-treepicker-show h-select-show", class: _vm.showCls },
         [
           _vm.multiple && _vm.objects.length
             ? [
