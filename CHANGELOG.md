@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.26.8 (2021-03-15)
+
+
+### Build System
+
+* **deps:** bump yargs-parser from 13.1.1 to 13.1.2 ([b289313](https://github.com/heyui/heyui/commit/b289313))
+
+
+
 ### 1.26.7 (2021-03-15)
 
 

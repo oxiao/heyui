@@ -18698,8 +18698,7 @@ var render = function() {
               ]),
           _vm._v(" "),
           _vm.object || _vm.objects.length
-            ? _c("i", { staticClass: "h-icon-down" })
-            : _c("i", {
+            ? _c("i", {
                 staticClass: "h-icon-close text-hover",
                 on: {
                   click: function($event) {
@@ -18708,6 +18707,7 @@ var render = function() {
                   }
                 }
               })
+            : _c("i", { staticClass: "h-icon-down" })
         ],
         2
       ),
