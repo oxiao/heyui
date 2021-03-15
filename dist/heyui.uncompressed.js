@@ -11438,6 +11438,10 @@ var _default = {
     useConfirm: {
       type: Boolean,
       default: false
+    },
+    clearable: {
+      type: Boolean,
+      default: true
     }
   },
   data: function data() {
@@ -18697,7 +18701,7 @@ var render = function() {
                 )
               ]),
           _vm._v(" "),
-          _vm.object || _vm.objects.length
+          _vm.clearable && (_vm.object || _vm.objects.length)
             ? _c("i", {
                 staticClass: "h-icon-close text-hover",
                 on: {
