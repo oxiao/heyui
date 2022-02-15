@@ -1,6 +1,6 @@
 <template>
   <div :class="treepickerCls" :disabled="disabled">
-    <div class="h-treepicker-show" :class="showCls">
+    <div class="h-treepicker-show h-select-show" :class="showCls">
       <template v-if="multiple&&objects.length">
         <div v-if="showCount" class="h-treepicker-value-single">{{'h.treepicker.selectDesc' |
           hlang([valuebak.length])}}</div>
@@ -13,7 +13,8 @@
       </template>
       <div v-else-if="!multiple&&object" class="h-treepicker-value-single">{{object[param.titleName]}}</div>
       <div v-else class="h-treepicker-placeholder">{{'h.treepicker.placeholder' | hlang(null, placeholder)}}</div>
-      <i class="h-icon-down"></i>
+      <i class="h-icon-close text-hover" v-if="clearable && (object || objects.length)" @click.stop="clear"></i>
+      <i class="h-icon-down" v-else ></i>
     </div>
     <div class="h-treepicker-group" :class="groupCls">
       <div class="h-treepicker-body">
@@ -82,7 +83,8 @@ export default {
     useConfirm: {
       type: Boolean,
       default: false
-    }
+    },
+    clearable: {type: Boolean, default: true}
   },
   data() {
     return {
@@ -226,6 +228,7 @@ export default {
       return null;
     },
     clear() {
+      this.object = null;
       this.stashObject = null;
       this.objects = [];
       this.$refs.tree.searchTree(null);

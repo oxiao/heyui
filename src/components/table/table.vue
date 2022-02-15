@@ -167,7 +167,7 @@ export default {
     },
     border: {
       type: Boolean,
-      default: false
+      default: true
     },
     height: Number,
     checkbox: {

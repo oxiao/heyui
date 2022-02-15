@@ -24,7 +24,7 @@ export default {
     label: String,
     prop: String,
     dict: String,
-    align: String,
+    align: { type: String, default: 'center' },
     format: Function,
     render: Function,
     unit: String,

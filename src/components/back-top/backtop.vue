@@ -16,7 +16,7 @@ export default {
   props: {
     target: {
       type: Function,
-      default: () => window.document
+      default: () => window.document.body
     },
     bottom: {
       type: Number,

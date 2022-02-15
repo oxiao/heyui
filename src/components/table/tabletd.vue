@@ -5,7 +5,11 @@
       <i class="h-table-tree-icon h-icon-angle-right" @click="toggleTree" v-if="data.children && data.children.length"></i>
       <i class="h-table-tree-empty" v-else ></i>
     </span>
-    <template v-if="prop || render">{{show}}</template><slot :data="data" :index="index"></slot>
+    <template v-if="prop || render">
+      <span v-if="format" v-html="show"></span>
+      <template v-else>{{show}}</template>
+    </template>
+    <slot :data="data" :index="index"></slot>
   </td>
 </template>
 <script>
@@ -65,7 +69,7 @@ export default {
         return value === '' || value === null || value === undefined ? '' : `${value}${this.unit}`;
       }
       if (this.format) {
-        return this.format(value);
+        return this.format(this.data, this.prop, value, this.index);
       }
       return value;
     }
