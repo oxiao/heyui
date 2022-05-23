@@ -8623,12 +8623,19 @@ var _default2 = {
       default: function _default() {
         return _config.default.getOption('dict', 'titleName');
       }
+    },
+    tipName: {
+      type: String,
+      default: function _default() {
+        return _config.default.getOption('dict', 'tipName');
+      }
     }
   },
   data: function data() {
     return {
       key: this.keyName,
-      title: this.titleName
+      title: this.titleName,
+      tip: this.tipName
     };
   },
   methods: {
@@ -17751,9 +17758,14 @@ var render = function() {
                   }
                 }),
                 !_vm.$scopedSlots.item
-                  ? _c("span", { staticClass: "h-radio-text" }, [
-                      _vm._v(_vm._s(option[_vm.title]))
-                    ])
+                  ? _c(
+                      "span",
+                      {
+                        staticClass: "h-radio-text",
+                        attrs: { title: option[_vm.tip] }
+                      },
+                      [_vm._v(_vm._s(option[_vm.title]))]
+                    )
                   : _vm._t("item", null, { item: option })
               ],
               2
