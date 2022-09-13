@@ -12,6 +12,7 @@ import BackTop from 'heyui/src/components/back-top';
 import Badge from 'heyui/src/components/badge';
 import Breadcrumb from 'heyui/src/components/breadcrumb';
 import Checkbox from 'heyui/src/components/checkbox';
+import ColorPicker from 'heyui/src/components/color-picker';
 import Circle from 'heyui/src/components/circle';
 import Category from 'heyui/src/components/category';
 import CategoryPicker from 'heyui/src/components/category-picker';
@@ -104,6 +105,7 @@ const components = {
   Category,
   CategoryPicker,
   Checkbox,
+  ColorPicker,
   hCircle: Circle,
   DatePicker,
   DateRangePicker,
